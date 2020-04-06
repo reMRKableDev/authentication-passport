@@ -20,11 +20,9 @@ passport.use(
     (email, password, done) => {
       User.findOne({ where: { email: email } })
         .then((foundUser) => {
-          // if the user isn't found
           !foundUser &&
             done(null, false, { message: "Can't find a user with this email" });
 
-          // when the user is found
           bcrypt
             .compare(password, foundUser.password)
             .then((isUser) => isUser && done(null, foundUser.dataValues))
