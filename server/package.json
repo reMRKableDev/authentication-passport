@@ -4,12 +4,15 @@
   "description": "Authentication using JWT Tokens and Passport",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon server.js"
+    "client": "cd .. && npm start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" "
   },
   "author": "Malcolm R. Kente",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",

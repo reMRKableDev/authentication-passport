@@ -12,7 +12,14 @@ router.post("/", (req, res, next) => {
     !user && res.status(400).send(info);
 
     const token = jwt.sign(JSON.stringify(user), APP_SECRET);
-    return res.status(200).send({ user, token });
+
+    const secureUser = {
+      firstname: user.firstname,
+      lastname: user.lastname,
+      email: user.email,
+    };
+
+    return res.status(200).send({ secureUser, token });
   })(req, res, next);
 });
 
