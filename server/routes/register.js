@@ -22,13 +22,7 @@ router.post("/", (req, res) => {
         email: user.email,
         password: hashedPassword,
       })
-        .then((newUser) =>
-          res
-            .status(200)
-            .send(
-              `New user has been added: ${JSON.stringify(newUser.dataValues)}`
-            )
-        )
+        .then((newUser) => res.status(200).send({ user: newUser.dataValues }))
         .catch((userErr) => console.error(`User error: ${userErr}`));
     })
     .catch((hashErr) => console.error(`Hashing gave errors: ${hashErr}`));
