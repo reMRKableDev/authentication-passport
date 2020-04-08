@@ -5,24 +5,20 @@ const db = require("../database/configs");
 const User = db.user;
 
 router.post("/", (req, res) => {
-  const user = {
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    password: req.body.password,
-  };
   /* Hashing incoming password */
   bcrypt
-    .hash(user.password, 10)
+    .hash(req.body.password, 10)
     .then((hashedPassword) => {
       /* Add the new user to the database table with hashedPassword. */
       User.create({
-        firstname: user.firstname,
-        lastname: user.lastname,
-        email: user.email,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
         password: hashedPassword,
       })
-        .then((newUser) => res.status(200).send({ user: newUser.dataValues }))
+        .then(() =>
+          res.status(200).send({ message: "You've successfully signed up!" })
+        )
         .catch((userErr) => console.error(`User error: ${userErr}`));
     })
     .catch((hashErr) => console.error(`Hashing gave errors: ${hashErr}`));

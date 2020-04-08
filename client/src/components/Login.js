@@ -1,36 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { Redirect } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
-const Login = () => {
+export default () => {
+  const { submitLoginForm, redirectProfile, message } = useContext(AuthContext);
   const { register, errors, handleSubmit } = useForm();
 
-  const submitLogin = (data, e) => {
-    e.preventDefault();
-
-    const user = {
-      email: data.email,
-      password: data.password,
-    };
-
-    fetch("/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .then((results) => console.log(results))
-      .catch((loginErr) => console.error(`Log in Fetch sucked: ${loginErr}`));
+  const redirectToProfile = () => {
+    return <Redirect to="/profile" />;
   };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit(submitLogin)}>
+  return redirectProfile ? (
+    redirectToProfile()
+  ) : (
+    <section>
+      {message && <span>{message}</span>}
+      <h2>Log In To Your Profile!</h2>
+      <p>Enter your account details to gain access to your profile!</p>
+      <form onSubmit={handleSubmit(submitLoginForm)}>
         <div>
-          <label htmlFor="email">Email</label>
-          <br />
+          <label htmlFor="email">Email</label> <br />
           <input
             type="email"
             name="email"
+            placeholder="Enter your email"
             ref={register({
               required: true,
               pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -40,21 +34,20 @@ const Login = () => {
           {errors.email && "Email format is wrong!"}
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <br />
+          <label htmlFor="password">Password</label> <br />
           <input
             type="password"
             name="password"
-            ref={register({ required: true, minLength: 3 })}
+            placeholder="Enter your password"
+            ref={register({ required: true, minLength: 6 })}
           />
           <br />
-          {errors.password &&
-            "Password needs to be at least 3 characters long!"}
+          {errors.password && "Password needs to be at least 6 characters long!"}
         </div>
-        <button type="submit">Register</button>
+        <div>
+          <button type="submit">Register</button>
+        </div>
       </form>
-    </div>
+    </section>
   );
 };
-
-export default Login;
