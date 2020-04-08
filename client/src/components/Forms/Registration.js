@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default () => {
   const { redirectLogin, submitRegistrationForm, isAuthenticated } = useContext(
@@ -63,7 +63,8 @@ export default () => {
             ref={register({ required: true, minLength: 6 })}
           />
           <br />
-          {errors.password && "Password needs to be at least 6 characters long!"}
+          {errors.password &&
+            "Password needs to be at least 6 characters long!"}
         </div>
         <div>
           <label htmlFor="verifyPassword">Verify Password</label> <br />

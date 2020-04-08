@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
-import { getRoute } from "../helpers/apiFetcher";
+import { AuthContext } from "../../contexts/AuthContext";
+import { getRoute } from "../../helpers/apiFetcher";
 
 export default ({ token, user }) => {
   const { logoutUser, authenticateUser, isAuthenticated, message } = useContext(
