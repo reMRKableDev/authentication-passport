@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for App component shallow render 1`] = `
+<section
+  className="App"
+>
+  <AuthContextProvider>
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/login"
+        />
+        <_default
+          component={[Function]}
+          path="/profile"
+        />
+      </Switch>
+    </BrowserRouter>
+  </AuthContextProvider>
+</section>
+`;
