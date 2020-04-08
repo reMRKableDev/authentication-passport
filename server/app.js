@@ -13,7 +13,6 @@ const app = express();
 const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const profileRouter = require("./routes/profile");
-const testRouter = require("./routes/test");
 
 /* DATABASE CONNECTOR */
 db.connector
@@ -30,7 +29,6 @@ app.use(express.json());
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/profile", profileRouter);
-app.use("/test", testRouter);
 
 /* ERROR HANDLER */
 app.use(function (req, res, next) {
