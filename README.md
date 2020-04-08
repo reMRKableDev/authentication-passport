@@ -8,10 +8,11 @@ The application covers:
 - Using Passport's ```JWTStrategy``` to validate the created tokens. 
 - Saving the input to a MySQL database using the Sequelize ORM.
 - Returning confirmation of action completed or not completed.
+- Using React.js and supporting deps on the ```client/``` to communicate with the server.
 
 ## Getting Started
 
-Change the ```.env.default``` file to an ```.env``` file which will hold the environment variables associated with your database.
+In the ```server/```, change the ```.env.default``` file to an ```.env``` file which will hold the environment variables associated with your database.
 
 Configure your Sequelize connector to read from process.env
 
