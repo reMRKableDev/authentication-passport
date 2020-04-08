@@ -1,17 +1,8 @@
 import React, { createContext, Component } from "react";
 import { postRoute } from "../helpers/apiFetcher";
+import { initialState } from "./InitialState";
 
 export const AuthContext = createContext();
-
-const initialState = {
-  isAuthenticated: false,
-  redirectProfile: false,
-  redirectLogin: false,
-  message: "",
-  user: {},
-  token: "",
-};
-
 export default class AuthContextProvider extends Component {
   state = initialState;
 
@@ -53,23 +44,6 @@ export default class AuthContextProvider extends Component {
       .catch((postError) =>
         console.error(`Error when running POST to api: ${postError}`)
       );
-
-    /*     fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .then((results) => {
-        this.setState({
-          user: results.secureUser,
-          token: results.token,
-          redirectProfile: true,
-        });
-      })
-      .catch((fetchErr) => console.error(`Fetch error: ${fetchErr}`)); */
   };
 
   authenticateUser = (isTokenVerified) => {
