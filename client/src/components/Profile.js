@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 export default ({ token, user }) => {
-  const { logoutUser, authenticateUser, isAuthenticated } = useContext(
+  const { logoutUser, authenticateUser, isAuthenticated, message } = useContext(
     AuthContext
   );
 
@@ -25,6 +25,7 @@ export default ({ token, user }) => {
 
   return isAuthenticated ? (
     <div>
+      {message && message}
       <h2>
         Welcome {user.firstname} {user.lastname}
       </h2>

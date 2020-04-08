@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 export default () => {
-  const { submitLoginForm, redirectProfile } = useContext(AuthContext);
+  const { submitLoginForm, redirectProfile, message } = useContext(AuthContext);
   const { register, errors, handleSubmit } = useForm();
 
   const redirectToProfile = () => {
@@ -15,6 +15,7 @@ export default () => {
     redirectToProfile()
   ) : (
     <section>
+      {message && <span>{message}</span>}
       <h2>Log In To Your Profile!</h2>
       <p>Enter your account details to gain access to your profile!</p>
       <form onSubmit={handleSubmit(submitLoginForm)}>

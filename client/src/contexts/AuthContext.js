@@ -6,6 +6,7 @@ const initialState = {
   isAuthenticated: false,
   redirectProfile: false,
   redirectLogin: false,
+  message: "",
   user: {},
   token: "",
 };
@@ -31,7 +32,9 @@ export default class AuthContextProvider extends Component {
       body: JSON.stringify(newUser),
     })
       .then((response) => response.json())
-      .then(() => this.setState({ redirectLogin: true }))
+      .then((results) =>
+        this.setState({ redirectLogin: true, message: results.message })
+      )
       .catch((fetchErr) => console.error(`Fetch error: ${fetchErr}`));
   };
 
@@ -62,7 +65,11 @@ export default class AuthContextProvider extends Component {
   };
 
   authenticateUser = (isTokenVerified) => {
-    this.setState({ ...this.state, isAuthenticated: isTokenVerified });
+    this.setState({
+      ...this.state,
+      isAuthenticated: isTokenVerified,
+      message: "You've successfully logged into your profile!",
+    });
   };
 
   logoutUser = () => {

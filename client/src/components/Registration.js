@@ -11,7 +11,7 @@ export default () => {
 
   const redirectToLogin = () => <Redirect to="/login" />;
 
-  return isAuthenticated ? (
+  return redirectLogin || isAuthenticated ? (
     redirectToLogin()
   ) : (
     <section>
