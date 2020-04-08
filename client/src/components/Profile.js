@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
+import { getRoute } from "../helpers/apiFetcher";
 
 export default ({ token, user }) => {
   const { logoutUser, authenticateUser, isAuthenticated, message } = useContext(
@@ -8,19 +9,11 @@ export default ({ token, user }) => {
   );
 
   useEffect(() => {
-    fetch("/profile", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    })
-      .then((response) => response.json())
-      .then((results) => {
-        authenticateUser(results.isTokenVerified);
-      })
-      .catch((profileErr) => console.error(`Profile error: ${profileErr}`));
+    getRoute("/profile", token)
+      .then((results) => authenticateUser(results.isTokenVerified))
+      .catch((getError) =>
+        console.error(`Error when running GET to api: ${getError}`)
+      );
   }, []);
 
   return isAuthenticated ? (
