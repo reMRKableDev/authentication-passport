@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import App from "../App";
 import { Route } from "react-router";
 import { shallow } from "enzyme";
