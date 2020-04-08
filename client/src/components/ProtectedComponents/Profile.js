@@ -14,6 +14,7 @@ export default ({ token, user }) => {
       .catch((getError) =>
         console.error(`Error when running GET to api: ${getError}`)
       );
+    // eslint-disable-next-line
   }, []);
 
   return isAuthenticated ? (

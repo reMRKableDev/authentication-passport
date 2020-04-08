@@ -27,7 +27,7 @@ export default () => {
             placeholder="Enter your email"
             ref={register({
               required: true,
-              pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
             })}
           />
           <br />
@@ -42,7 +42,8 @@ export default () => {
             ref={register({ required: true, minLength: 6 })}
           />
           <br />
-          {errors.password && "Password needs to be at least 6 characters long!"}
+          {errors.password &&
+            "Password needs to be at least 6 characters long!"}
         </div>
         <div>
           <button type="submit">Register</button>

@@ -34,13 +34,13 @@ export default class AuthContextProvider extends Component {
     };
 
     postRoute("/login", user)
-      .then((results) =>
+      .then((results) => {
         this.setState({
           user: results.secureUser,
           token: results.token,
           redirectProfile: true,
-        })
-      )
+        });
+      })
       .catch((postError) =>
         console.error(`Error when running POST to api: ${postError}`)
       );
