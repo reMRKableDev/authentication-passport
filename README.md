@@ -1,14 +1,16 @@
-# Authentication Passport.js
+# Authentication Passport.js - Node.js X React.js
 
-An introduction to implementing authentication using Passport.js strategies.  
+An introduction to implementing authentication using Passport.js strategies. Generating and passing JWT between the back and front. 
 
-The application covers:
-- Using Passport's ```LocalStrategy``` for login authentication.
-- Creating JSON Web Tokens by implementing ```.sign()``` from ```jsonwebtokens```.
-- Using Passport's ```JWTStrategy``` to validate the created tokens. 
-- Saving the input to a MySQL database using the Sequelize ORM.
-- Returning confirmation of action completed or not completed.
-- Using React.js and supporting deps on the ```client/``` to communicate with the server.
+## Technologies
+Frontend : React.js
+
+Read more about client repo here --> [README.md](./client/README.md)
+
+Backend : Node.js
+
+Read more about server repo here --> [README.md](./server/README.md)
+
 
 ## Getting Started
 
