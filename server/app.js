@@ -17,7 +17,7 @@ const testRouter = require("./routes/test");
 
 /* DATABASE CONNECTOR */
 db.connector
-  .sync({ force: true })
+  .sync()
   .then(() => console.log("Drop and create db"))
   .catch((error) => console.error(`sync failed: ${error}`));
 

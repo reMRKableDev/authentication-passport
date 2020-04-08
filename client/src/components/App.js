@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -7,20 +7,21 @@ import Login from "./Login";
 import Profile from "./Profile";
 import Navbar from "./Navbar";
 import AuthContextProvider from "../contexts/AuthContext";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
     <section className="App">
-      <Router>
-        <Navbar />
-        <Switch>
-          <AuthContextProvider>
+      <AuthContextProvider>
+        <Router>
+          <Navbar />
+          <Switch>
             <Route exact path="/" component={Registration} />
             <Route path="/login" component={Login} />
-            <Route path="/profile" component={Profile} />
-          </AuthContextProvider>
-        </Switch>
-      </Router>
+            <PrivateRoute path="/profile" component={Profile} />
+          </Switch>
+        </Router>
+      </AuthContextProvider>
     </section>
   );
 }
