@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { getRoute } from "../../helpers/apiFetcher";
 
-export default ({ token, user }) => {
-  const { logoutUser, authenticateUser, isAuthenticated, message } = useContext(
-    AuthContext
-  );
+export default () => {
+  const {
+    logoutUser,
+    authenticateUser,
+    isAuthenticated,
+    message,
+    token,
+    user,
+  } = useContext(AuthContext);
 
   useEffect(() => {
     getRoute("/profile", token)

@@ -36,7 +36,7 @@ test("Link matches login snapshot", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("Link matches loprofilegin snapshot", () => {
+test("Link matches profile snapshot", () => {
   const context = {};
   const component = renderer.create(
     <StaticRouter location="/profile" context={context}>

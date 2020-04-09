@@ -21,6 +21,13 @@ exports[`Link matches loprofilegin snapshot 1`] = `
 />
 `;
 
+exports[`Link matches profile snapshot 1`] = `
+<a
+  href="/profile"
+  onClick={[Function]}
+/>
+`;
+
 exports[`shallow render 1`] = `
 <nav>
   <ul>
