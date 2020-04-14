@@ -17,7 +17,7 @@ export default () => {
     <section>
       <h2>Register New Account!</h2>
       <p>Please fill in your information to create your account</p>
-      <form onSubmit={handleSubmit(submitRegistrationForm)}>
+      <form onSubmit={handleSubmit(submitRegistrationForm)} data-testid="test-form">
         <div>
           <label htmlFor="firstname">First Name</label> <br />
           <input

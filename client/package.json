@@ -40,6 +40,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
-    "kind-of": "^6.0.3"
+    "kind-of": "^6.0.3",
+    "react-test-context-provider": "^2.2.0"
   }
 }
