@@ -16,13 +16,16 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.3.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +45,7 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "kind-of": "^6.0.3",
+    "react-styleguidist": "^11.0.5",
     "react-test-context-provider": "^2.2.0"
   }
 }

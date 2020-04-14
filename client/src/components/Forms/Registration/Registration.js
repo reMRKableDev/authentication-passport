@@ -2,7 +2,25 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
+import {
+  StyledFormSection,
+  StyledForm,
+  StyledDiv,
+  StyledInput,
+  StyledLabel,
+  StyledError,
+  StyledButton,
+} from "../Styled";
 
+/**
+ *
+ * Form component for registration
+ *
+ * @function
+ * @implements {AuthContext}
+ * @returns {React.Component}
+ *
+ */
 export default () => {
   const { redirectLogin, submitRegistrationForm, isAuthenticated } = useContext(
     AuthContext
@@ -14,51 +32,50 @@ export default () => {
   return redirectLogin || isAuthenticated ? (
     redirectToLogin()
   ) : (
-    <section data-testid="test-formSection">
+    <StyledFormSection data-testid="test-formSection">
       <h2 data-testid="test-formTitle">Register New Account!</h2>
       <p data-testid="test-formDescription">
         Please fill in your information to create your account
       </p>
-      <form
+      <StyledForm
         onSubmit={handleSubmit(submitRegistrationForm)}
         data-testid="test-form"
       >
-        <div>
-          <label htmlFor="firstname" data-testid="test-label">
+        <StyledDiv>
+          <StyledLabel htmlFor="firstname" data-testid="test-label">
             First Name
-          </label>
-          <br />
-          <input
+          </StyledLabel>
+          <StyledInput
             type="text"
             name="firstname"
             placeholder="Enter your first name"
             ref={register({ required: true })}
             data-testid="test-firstname"
           />
-          <br />
-          {errors.firstname && <span>First Name is required!</span>}
-        </div>
-        <div>
-          <label htmlFor="lastname" data-testid="test-label">
+          {errors.firstname && (
+            <StyledError>First Name is required!</StyledError>
+          )}
+        </StyledDiv>
+
+        <StyledDiv>
+          <StyledLabel htmlFor="lastname" data-testid="test-label">
             Last Name
-          </label>
-          <br />
-          <input
+          </StyledLabel>
+          <StyledInput
             type="text"
             name="lastname"
             placeholder="Enter your last name"
             ref={register({ required: true })}
             data-testid="test-lastname"
           />
-          <br />
-          {errors.lastname && <span>Last Name is required!</span>}
-        </div>
-        <div>
-          <label htmlFor="email" data-testid="test-label">
+          {errors.lastname && <StyledError>Last Name is required!</StyledError>}
+        </StyledDiv>
+
+        <StyledDiv>
+          <StyledLabel htmlFor="email" data-testid="test-label">
             Email
-          </label>
-          <br />
-          <input
+          </StyledLabel>
+          <StyledInput
             type="email"
             name="email"
             placeholder="Enter your email"
@@ -68,36 +85,37 @@ export default () => {
             })}
             data-testid="test-email"
           />
-          <br />
           {errors.email && errors.email.type === "required" && (
-            <span>Email is required!</span>
+            <StyledError>Email is required!</StyledError>
           )}
           {errors.email && errors.email.type === "pattern" && (
-            <span>Email format is wrong!</span>
+            <StyledError>Email format is wrong!</StyledError>
           )}
-        </div>
-        <div>
-          <label htmlFor="password" data-testid="test-label">
+        </StyledDiv>
+
+        <StyledDiv>
+          <StyledLabel htmlFor="password" data-testid="test-label">
             Password
-          </label>
-          <br />
-          <input
+          </StyledLabel>
+          <StyledInput
             type="password"
             name="password"
             placeholder="Enter your password"
             ref={register({ required: true, minLength: 6 })}
             data-testid="test-password"
           />
-          <br />
-          {errors.password &&
-            "Password needs to be at least 6 characters long!"}
-        </div>
-        <div>
-          <label htmlFor="verifyPassword" data-testid="test-label">
+          {errors.password && (
+            <StyledError>
+              Password needs to be at least 6 characters long!
+            </StyledError>
+          )}
+        </StyledDiv>
+
+        <StyledDiv>
+          <StyledLabel htmlFor="verifyPassword" data-testid="test-label">
             Verify Password
-          </label>
-          <br />
-          <input
+          </StyledLabel>
+          <StyledInput
             type="password"
             name="verifyPassword"
             placeholder="Verify your password"
@@ -107,15 +125,17 @@ export default () => {
             })}
             data-testid="test-verifyPassword"
           />
-          <br />
-          {errors.verifyPassword && "Passwords don't match!"}
-        </div>
-        <div>
-          <button type="submit" data-testid="test-submit">
+          {errors.verifyPassword && (
+            <StyledError>Passwords don't match!</StyledError>
+          )}
+        </StyledDiv>
+
+        <StyledDiv>
+          <StyledButton type="submit" data-testid="test-submit">
             Register
-          </button>
-        </div>
-      </form>
-    </section>
+          </StyledButton>
+        </StyledDiv>
+      </StyledForm>
+    </StyledFormSection>
   );
 };
