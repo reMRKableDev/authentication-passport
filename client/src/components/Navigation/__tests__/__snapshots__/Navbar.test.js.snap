@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link matches home snapshot 1`] = `
+exports[`Unit Tests for component snapshots Link matches home snapshot 1`] = `
 <a
   href="/"
   onClick={[Function]}
 />
 `;
 
-exports[`Link matches login snapshot 1`] = `
+exports[`Unit Tests for component snapshots Link matches login snapshot 1`] = `
 <a
   href="/login"
   onClick={[Function]}
 />
 `;
 
-exports[`Link matches profile snapshot 1`] = `
+exports[`Unit Tests for component snapshots Link matches profile snapshot 1`] = `
 <a
   href="/profile"
   onClick={[Function]}
 />
 `;
 
-exports[`shallow render 1`] = `
+exports[`Unit Tests for component snapshots shallow render 1`] = `
 <nav>
   <ul>
     <li>

@@ -2,6 +2,7 @@ import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { createSerializer } from "enzyme-to-json";
 import "@testing-library/jest-dom/extend-expect";
+import "mutationobserver-shim";
 
 // Set the default serializer for Jest to be the from enzyme-to-json
 // This produces an easier to read (for humans) serialized format.

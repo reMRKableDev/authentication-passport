@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import App from "../App";
 import { Route } from "react-router";
 import { shallow } from "enzyme";
-import Registration from "../../Forms/Registration";
+import Registration from "../../Forms/Registration/Registration";
 import Login from "../../Forms/Login";
 
 const shallowComponent = () => shallow(<App />); // Real unit test (isolation, no children render)
