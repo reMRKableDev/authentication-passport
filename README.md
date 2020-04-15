@@ -3,11 +3,11 @@
 An introduction to implementing authentication using Passport.js strategies. Generating and passing JWT between the back and front. 
 
 ## Technologies
-Frontend : React.js
+**Frontend : React.js**
 
 Read more about client repo here --> [README.md](./client/README.md)
 
-Backend : Node.js
+**Backend : Node.js**
 
 Read more about server repo here --> [README.md](./server/README.md)
 
