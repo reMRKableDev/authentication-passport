@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-/**@component */
+/**@component Styled components for form components */
 
 export const StyledFormSection = styled.section`
   display: flex;

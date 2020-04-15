@@ -9,6 +9,11 @@ import Navbar from "../Navigation/Navbar";
 import AuthContextProvider from "../../contexts/AuthContext";
 import PrivateRoute from "../ProtectedRoutes/PrivateRoute";
 
+/**
+ * Parent component for application.
+ * @function
+ * @returns {React.Component}
+ */
 function App() {
   return (
     <section className="App">
