@@ -23,13 +23,20 @@ export default () => {
   return redirectProfile ? (
     redirectToProfile()
   ) : (
-    <StyledFormSection>
+    <StyledFormSection data-testid="test-formSection">
       {message && <span>{message}</span>}
-      <h2>Log In To Your Profile!</h2>
-      <p>Enter your account details to gain access to your profile!</p>
-      <StyledForm onSubmit={handleSubmit(submitLoginForm)}>
+      <h2 data-testid="test-formTitle">Log In To Your Profile!</h2>
+      <p data-testid="test-formDescription">
+        Enter your account details to gain access to your profile!
+      </p>
+      <StyledForm
+        onSubmit={handleSubmit(submitLoginForm)}
+        data-testid="test-form"
+      >
         <StyledDiv>
-          <StyledLabel htmlFor="email">Email</StyledLabel>
+          <StyledLabel htmlFor="email" data-testid="test-label">
+            Email
+          </StyledLabel>
           <StyledInput
             type="email"
             name="email"
@@ -38,6 +45,7 @@ export default () => {
               required: true,
               pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
             })}
+            data-testid="test-email"
           />
           {errors.email && errors.email.type === "required" && (
             <StyledError>Email is required!</StyledError>
@@ -48,12 +56,15 @@ export default () => {
         </StyledDiv>
 
         <StyledDiv>
-          <StyledLabel htmlFor="password">Password</StyledLabel>
+          <StyledLabel htmlFor="password" data-testid="test-label">
+            Password
+          </StyledLabel>
           <StyledInput
             type="password"
             name="password"
             placeholder="Enter your password"
             ref={register({ required: true, minLength: 6 })}
+            data-testid="test-password"
           />
 
           {errors.password && (
@@ -64,7 +75,9 @@ export default () => {
         </StyledDiv>
 
         <StyledDiv>
-          <StyledButton type="submit">Register</StyledButton>
+          <StyledButton type="submit" data-testid="test-submit">
+            Login
+          </StyledButton>
         </StyledDiv>
       </StyledForm>
     </StyledFormSection>

@@ -1,11 +1,11 @@
-### Registration Form
+### Login Form
 
-Visual Example of the Registration Form
+Visual Example of the Login Form
 
 ```js
 import { AuthContext } from "../../../contexts/AuthContext";
 
 <AuthContext.Provider value={{}}>
-  <Registration />
+  <Login />
 </AuthContext.Provider>;
 ```
