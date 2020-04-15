@@ -12,6 +12,15 @@ import {
   StyledButton,
 } from "../Styled";
 
+/**
+ *
+ * Form component for logging in
+ *
+ * @function
+ * @implements {AuthContext}
+ * @returns {React.Component}
+ *
+ */
 export default () => {
   const { submitLoginForm, redirectProfile, message } = useContext(AuthContext);
   const { register, errors, handleSubmit } = useForm();
