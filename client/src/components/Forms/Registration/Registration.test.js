@@ -1,13 +1,13 @@
 import React from "react";
-import { AuthContext } from "../../../../contexts/AuthContext";
+import { AuthContext } from "../../../contexts/AuthContext";
 import { render } from "@testing-library/react";
 import {
   validateTruthiness,
   validateMultipleTextValues,
   validateEquality,
-} from "../../../../utils/testing/validators";
-import { changeInputValue } from "../../../../helpers/testingLib";
-import Registration from "../Registration";
+} from "../../../utils/testing/validators";
+import { changeInputValue } from "../../../helpers/testingLib";
+import Registration from "./Registration";
 
 describe("Unit Tests for form elements and value validity ", () => {
   test("should render form with all elements", () => {
