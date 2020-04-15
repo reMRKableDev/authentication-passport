@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Registration from "../Forms/Registration/Registration";
-import Login from "../Forms/Login";
+import Login from "../Forms/Login/Login";
 import Profile from "../ProtectedComponents/Profile";
 import Navbar from "../Navigation/Navbar";
 import AuthContextProvider from "../../contexts/AuthContext";
