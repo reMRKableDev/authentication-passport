@@ -1,5 +1,7 @@
 # Authentication Passport.js - Node.js X React.js
 
+[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/authentication-passport/badge)](https://www.codefactor.io/repository/github/remrkabledev/authentication-passport)
+
 An introduction to implementing authentication using Passport.js strategies. Generating and passing JWT between the back and front. 
 
 ## Technologies
