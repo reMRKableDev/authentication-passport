@@ -11,7 +11,7 @@
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.5.0",
     "jest-fetch-mock": "3.0.3",
-    "mutationobserver-shim": "0.3.5",
+    "mutationobserver-shim": "0.3.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
