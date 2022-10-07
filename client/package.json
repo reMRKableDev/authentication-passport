@@ -16,7 +16,7 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "react-hook-form": "6.8.5",
-    "react-scripts": "3.4.3",
+    "react-scripts": "5.0.1",
     "styled-components": "5.2.0"
   },
   "scripts": {
@@ -45,7 +45,7 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "kind-of": "6.0.3",
-    "react-styleguidist": "11.1.0",
+    "react-styleguidist": "11.2.0",
     "react-test-context-provider": "2.2.0"
   }
 }
